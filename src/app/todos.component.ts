@@ -14,7 +14,8 @@ export class TodosComponent implements OnInit {
   todo: TodoItem = {
     id: 1,
     label: "test de todo",
-    description: 'ceci est un test'
+    description: 'ceci est un test',
+    active: true
   };
   todos: TodoItem[];
   selectedTodo: TodoItem;
@@ -34,13 +35,18 @@ export class TodosComponent implements OnInit {
     this.todo = {
       id: 1,
       label: label,
-      description: ''
+      description: '',
+      active: true
     };
         this.todos.push(this.todo);
         this.selectedTodo = null;
   }
   delete(todo: TodoItem): void {
           this.todos = this.todos.filter(t => t !== todo);
+          if (this.selectedTodo === todo) { this.selectedTodo = null; }
+  }
+  done(todo: TodoItem): void {
+          todo.active = !todo.active;
           if (this.selectedTodo === todo) { this.selectedTodo = null; }
   }
 }

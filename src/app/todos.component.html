@@ -7,9 +7,10 @@
       (click)="onSelect(todo)">
       <div class="card">
         <div class="section">
-          <h3>{{todo.label}}</h3>
-          <button class="delete"
-          (click)="delete(todo); $event.stopPropagation()">x</button>
+          <h3 [ngStyle]="!todo.active && {'text-decoration': 'line-through'}">{{todo.label}}</h3>
+          <span class="close"
+          (click)="delete(todo); $event.stopPropagation()"></span>
+          <button class="small" (click)="done(todo);">Switch status!</button>
         </div>
       </div>
     </li>
