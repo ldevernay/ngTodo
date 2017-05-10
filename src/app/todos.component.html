@@ -1,6 +1,13 @@
 <h2>My Todos</h2>
-<ul class="todos">
-  <li *ngFor="let todo of todos">
-    {{todo.id}} : {{todo.label}}, {{todo.description}}
-  </li>
-</ul>
+<div class="row">
+  <ul class="todos">
+    <li *ngFor="let todo of todos">
+      <div class="card">
+        <div class="section">
+          <h3>{{todo.label}}</h3>
+          <p>{{todo.description}}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
