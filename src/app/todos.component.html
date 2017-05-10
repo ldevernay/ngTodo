@@ -15,5 +15,13 @@
 </div>
 <div class="col-sm-7">
   <todo-detail [todo]="selectedTodo"></todo-detail>
+  <div class="card">
+    <div class="section">
+    <label>Label</label> <input #todoLabel placeholder="Coder"/>
+    <button (click)="add(todoLabel.value); todoLabel.value=''">
+      Add
+    </button>
+  </div>
+  </div>
 </div>
 </div>

@@ -14,7 +14,7 @@ import { TodoService } from './todo.service';
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoDetailComponent
+    TodoDetailComponent,
   ],
   imports: [
     BrowserModule,

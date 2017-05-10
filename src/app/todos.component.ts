@@ -27,5 +27,16 @@ export class TodosComponent implements OnInit {
   };
   onSelect(todo: TodoItem): void {
     this.selectedTodo = todo;
+  };
+  add(label: string): void {
+    label = label.trim();
+    if (!label){ return; }
+    this.todo = {
+      id: 1,
+      label: label,
+      description: ''
+    };
+        this.todos.push(this.todo);
+        this.selectedTodo = null;
   }
 }

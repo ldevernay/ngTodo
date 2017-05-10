@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import {TodoItem } from './TodoItem';
+import { TodoItem } from './TodoItem';
+
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'todo-detail',
@@ -9,4 +11,8 @@ import {TodoItem } from './TodoItem';
 })
 export class TodoDetailComponent {
   @Input() todo: TodoItem;
+
+  constructor(
+    private todoService: TodoService
+  ){}
 }
