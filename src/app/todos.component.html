@@ -1,9 +1,10 @@
 <h2>My Todos</h2>
 <div class="row">
-  <ul class="todos">
-    <li *ngFor="let todo of todos"
-    [class.selected]="todo === selectedTodo"
-    (click)="onSelect(todo)">
+  <div class="col-sm-5">
+    <ul class="todos">
+      <li *ngFor="let todo of todos"
+      [class.selected]="todo === selectedTodo"
+      (click)="onSelect(todo)">
       <div class="card">
         <div class="section">
           <h3>{{todo.label}}</h3>
@@ -12,4 +13,7 @@
     </li>
   </ul>
 </div>
-<todo-detail [todo]="selectedTodo"></todo-detail>
+<div class="col-sm-7">
+  <todo-detail [todo]="selectedTodo"></todo-detail>
+</div>
+</div>
