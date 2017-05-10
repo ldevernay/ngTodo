@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TodosComponent } from './todos.component';
+import { TodoDetailComponent } from './todo-detail.component';
 
 import { TodoService } from './todo.service';
 
@@ -12,7 +13,8 @@ import { TodoService } from './todo.service';
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent
+    TodosComponent,
+    TodoDetailComponent
   ],
   imports: [
     BrowserModule,

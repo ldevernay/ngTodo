@@ -17,6 +17,7 @@ export class TodosComponent implements OnInit {
     description: 'ceci est un test'
   };
   todos: TodoItem[];
+  selectedTodo: TodoItem;
   constructor(private todoService: TodoService){ };
   getTodos(): void {
     this.todoService.getTodos().then(todos => this.todos = todos);
@@ -24,4 +25,7 @@ export class TodosComponent implements OnInit {
   ngOnInit(): void {
     this.getTodos();
   };
+  onSelect(todo: TodoItem): void {
+    this.selectedTodo = todo;
+  }
 }
