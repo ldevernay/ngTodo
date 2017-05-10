@@ -39,4 +39,8 @@ export class TodosComponent implements OnInit {
         this.todos.push(this.todo);
         this.selectedTodo = null;
   }
+  delete(todo: TodoItem): void {
+          this.todos = this.todos.filter(t => t !== todo);
+          if (this.selectedTodo === todo) { this.selectedTodo = null; }
+  }
 }

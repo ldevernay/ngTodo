@@ -8,20 +8,22 @@
       <div class="card">
         <div class="section">
           <h3>{{todo.label}}</h3>
+          <button class="delete"
+          (click)="delete(todo); $event.stopPropagation()">x</button>
         </div>
       </div>
     </li>
   </ul>
 </div>
 <div class="col-sm-7">
-  <todo-detail [todo]="selectedTodo"></todo-detail>
   <div class="card">
     <div class="section">
-    <label>Label</label> <input #todoLabel placeholder="Coder"/>
-    <button (click)="add(todoLabel.value); todoLabel.value=''">
-      Add
-    </button>
+      <label>Label</label> <input #todoLabel placeholder="Coder"/>
+      <button (click)="add(todoLabel.value); todoLabel.value=''">
+        Add
+      </button>
+    </div>
   </div>
-  </div>
+  <todo-detail [todo]="selectedTodo"></todo-detail>
 </div>
 </div>
